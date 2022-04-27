@@ -6,6 +6,10 @@
 //
 
 #import "ViewController.h"
+#import "TicketDemo.h"
+#import "EatDemo.h"
+#import "ThreadNum.h"
+#import "LoadingPhoto.h"
 
 /*
 
@@ -27,6 +31,7 @@
  }
  
  */
+
 
 /*
  
@@ -57,254 +62,70 @@
 */
 
 @interface ViewController ()
-@property (nonatomic, assign) int surplusCount;
-@property (nonatomic, strong) dispatch_semaphore_t semaphore;
+
+@property (nonatomic, strong) TicketDemo *ticket;
+@property (nonatomic, strong) EatDemo *eat;
+@property (nonatomic, strong) ThreadNum *threadnum;
+@property (nonatomic, strong) LoadingPhoto *downloadPhone;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self test];
-    //[self test2];
-    //[self test3];
-    //[self test4];
-    [self nb];
+    //[self testTicket];
+    //[self testEatBun];
+    //[self testThreadNum];
+    //[self testDownloadImage];
+    [self test];
 }
 
-
-/*
-   多个异步操作 线程同步
-   异步并发下载3张图片 并将合成 显示到屏幕上
-   异步下载图片API(已提供)
- */
-
-// 异步下载图片
-- (void)downloadImage:(NSString *)url completionHandler:(void(^)(UIImage * image))completionHandler {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"真正图片下载线程%@",[NSThread currentThread]);
-        // 模拟图片下载耗费的时间
-        [NSThread sleepForTimeInterval:2];
-        
-        if (completionHandler) {
-            completionHandler([UIImage new]);
-        }
-    });
+// 保证线程安全、线程加锁。
+- (void)testTicket {
+    _ticket = [[TicketDemo alloc] init];
+    [_ticket saleTicket];
+   // [_ticket saleTicket2];
 }
 
+// 保证线程安全、线程加锁。
+- (void)testEatBun {
+    _eat = [[EatDemo alloc] init];
+    [_eat eatBun];
+}
+
+// 线程并发数量控制
+- (void)testThreadNum {
+    _threadnum = [[ThreadNum alloc] init];
+    [_threadnum test];
+    //[_threadnum test2];
+}
+
+// 线程同步 有多个异步操作需要执行，并且当所有操作完成后需要根据各个操作的结果来执行其他任务
+- (void)testDownloadImage {
+    _downloadPhone = [[LoadingPhoto alloc] init];
+    [_downloadPhone downloadImage];
+}
+
+// 线程同步  单个异步操作的结果同步使用到当前线程
 - (void)test {
-    [self downloadImage1:@"image url 1" image2:@"image url 2" combinedHandler:^(UIImage *combinedImage) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"在主线程中更新 UI");
-        });
-    }];
-}
-
-
-- (void)nb {
     
-    dispatch_queue_t queue = dispatch_queue_create("myqueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    
-    dispatch_async(queue, ^{
-        
-        for (int i = 0; i< 5; i++) {
-            dispatch_async(queue, ^{
-                [self downloadImage:@"" completionHandler:^(UIImage *image) {
-                    [NSThread sleepForTimeInterval:2];
-                    NSLog(@"image finished");
-                    dispatch_semaphore_signal(semaphore);
-                }];
-            });
-        }
-        
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"刷新UI");
-        });
-    });
-   
-    NSLog(@"主线程继续走");
-    
-}
-
-
-// 信号量+队列组  来实现线程同步
-- (void)downloadImage1: (NSString *)url1 image2:(NSString *)url2 combinedHandler:(void (^)(UIImage *combinedImage))combinedHandler {
-    
-    NSLog(@"-- all tasks begin --");
-    
-    // 创建队列组
-    dispatch_group_t group = dispatch_group_create();
-    
-    // 创建并发队列
-    dispatch_queue_t queue = dispatch_queue_create("myqueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
- 
-    __block UIImage *image1 = nil;
-    __block UIImage *image2 = nil;
-    __block UIImage *image3 = nil;
-    
-    dispatch_group_async(group, queue, ^{
-        NSLog(@"队列组线程1=%@",[NSThread currentThread]);
-        NSLog(@"start downloading image1");
-        // 假设调用别人封装的异步下载图片的API
-        [self downloadImage:@"" completionHandler:^(UIImage *image) {
-            image1 = image;
-            NSLog(@"image1 finished");
-            dispatch_semaphore_signal(semaphore);
-        }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    });
-
-    /*
-     
-     在64位的机器上，intptr_t和uintptr_t分别是long int、unsigned long int的别名；在32位的机器上，intptr_t和uintptr_t分别是int、unsigned int的别名。
-     
-     */
-    
-    dispatch_group_async(group, queue, ^{
-        NSLog(@"队列组线程2=%@",[NSThread currentThread]);
-        NSLog(@"start downloading image2");
-        // 假设调用别人封装的异步下载图片的API
-        [self downloadImage:@"" completionHandler:^(UIImage *image) {
-            image2 = image;
-            NSLog(@"image2 finished");
-            dispatch_semaphore_signal(semaphore);
-        }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    });
-    
-    dispatch_group_async(group, queue, ^{
-        NSLog(@"队列组线程3=%@",[NSThread currentThread]);
-        NSLog(@"start downloading image3");
-        // 假设调用别人封装的异步下载图片的API
-        [self downloadImage:@"" completionHandler:^(UIImage *image) {
-            image3 = image;
-            NSLog(@"image3 finished");
-            dispatch_semaphore_signal(semaphore);
-        }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    });
-    
-    dispatch_group_notify(group, queue, ^{
-        NSLog(@"all task end");
-        // 模拟图片合成过程
-        [NSThread sleepForTimeInterval:2];
-        if (combinedHandler) {
-            combinedHandler([UIImage new]);
-        }
-    });
-    
-    NSLog(@"主线程继续走");
-}
-
-/*
- 需要同时执行很多个任务，例如下载 100 首歌曲，很明显我们不能同时开启 100 个子线程去执行下载任务，这时我们就可以利用信号量的特点来控制并发线程的数量
-*/
-
-// 线程并发量控制
-- (void)test2 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"线程==%@",[NSThread currentThread]);
-        dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(4);
+        NSLog(@"当前线程===%@",[NSThread currentThread]);
+        dispatch_queue_t queue = dispatch_queue_create(DISPATCH_QUEUE_PRIORITY_DEFAULT, DISPATCH_QUEUE_CONCURRENT);
+        dispatch_semaphore_t st = dispatch_semaphore_create(0);
         
-        for(int i = 0; i < 100; i++) {
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            
-            dispatch_async(queue, ^{
-                NSLog(@"task%d begin -- %@", i, [NSThread currentThread]);
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"task%d end", i);
-                dispatch_semaphore_signal(semaphore);
-            });
-        }
-    });
-}
-
-- (void)test3 {
-    dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_queue_t serialQueue = dispatch_queue_create("serialQueue",DISPATCH_QUEUE_SERIAL);
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(4);
-    for (NSInteger i = 0; i < 15; i++) {
-        dispatch_async(serialQueue, ^{
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            dispatch_async(concurrentQueue, ^{
-                NSLog(@"thread:%@开始执行任务%d",[NSThread currentThread],(int)i);
-                sleep(1);
-                NSLog(@"thread:%@结束执行任务%d",[NSThread currentThread],(int)i);
-                dispatch_semaphore_signal(semaphore);});
+        __block int number = 0 ;
+        
+        dispatch_async(queue, ^{
+            NSLog(@"当前线程===%@",[NSThread currentThread]);
+            number = 100;
+            [NSThread sleepForTimeInterval:3];  // 模拟耗时操作
+            dispatch_semaphore_signal(st);
         });
-    }
-    NSLog(@"主线程...!");
-}
-
-
-- (void)test4 {
-    // 初始化包子数量
-    self.surplusCount = 20; // 最开始剩余的包子的数量为 20 个
-        
-    // 初始化信号量
-    self.semaphore = dispatch_semaphore_create(1);
-        
-    // 创建并发线程，三个人吃包子同时执行，互不影响
-    dispatch_queue_t queue = dispatch_queue_create("com.jarypan.gcdsummary.eatqueue", DISPATCH_QUEUE_CONCURRENT);
-        
-    // 3 个人开始吃包子
-    dispatch_async(queue, ^{
-        NSLog(@"线程1==%@",[NSThread currentThread]);
-        [self peopleEat:1];
-        //[self eat];
+        dispatch_semaphore_wait(st, DISPATCH_TIME_FOREVER);  // dispatch_semaphore_signal 执行前， dispatch_semaphore_wait使信号量 为 -1   线程不允许往下走   nslog 不执行
+        NSLog(@"number==%d", number);
     });
-    dispatch_async(queue, ^{
-        NSLog(@"线程2==%@",[NSThread currentThread]);
-        [self peopleEat:2];
-        //[self eat];
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"线程3==%@",[NSThread currentThread]);
-        [self peopleEat:3];
-        //[self eat];
-    });
+    NSLog(@"主线程继续走");
+   
 }
-
-// 模拟吃包子 不考虑线程安全
-- (void)eat {
-    while (YES) {
-        if (self.surplusCount > 0) {
-            self.surplusCount--;
-            NSLog(@"start eating, surplusCount is %ld", (long)self.surplusCount);
-            [NSThread sleepForTimeInterval:0.1]; // 模拟吃包子（耗时操作）
-        } else {
-            NSLog(@"所有包子已吃完");
-            break;
-        }
-    }
-}
-
-// 三个人吃包子耗时不一样
-- (void)peopleEat:(int)people {
-    while (YES) {
-        if (self.surplusCount > 0) {
-            // 拿包子
-            [self getTheSteamedStuffedBun];
-            NSLog(@"people %d start eating, surplusCount is %ld", people, (long)self.surplusCount);
-            [NSThread sleepForTimeInterval:people/10.0]; // 吃包子的时间因人而异
-        } else {
-            NSLog(@"所有包子已吃完");
-            break;
-        }
-    }
-}
-// 拿包子
-- (void)getTheSteamedStuffedBun {
-    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-    self.surplusCount--;
-    dispatch_semaphore_signal(self.semaphore);
-}
-
 @end

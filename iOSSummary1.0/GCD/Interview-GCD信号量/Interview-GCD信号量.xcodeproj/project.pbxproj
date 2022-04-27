@@ -14,6 +14,10 @@
 		A44805392817CB76005CB27A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A44805382817CB76005CB27A /* Assets.xcassets */; };
 		A448053C2817CB76005CB27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A448053A2817CB76005CB27A /* LaunchScreen.storyboard */; };
 		A448053F2817CB76005CB27A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A448053E2817CB76005CB27A /* main.m */; };
+		A448054B28191464005CB27A /* TicketDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = A448054A28191464005CB27A /* TicketDemo.m */; };
+		A448054E281919E5005CB27A /* EatDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = A448054D281919E5005CB27A /* EatDemo.m */; };
+		A448055128191BB9005CB27A /* ThreadNum.m in Sources */ = {isa = PBXBuildFile; fileRef = A448055028191BB9005CB27A /* ThreadNum.m */; };
+		A448055428191F10005CB27A /* LoadingPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = A448055328191F10005CB27A /* LoadingPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,14 @@
 		A448053B2817CB76005CB27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A448053D2817CB76005CB27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A448053E2817CB76005CB27A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A448054928191464005CB27A /* TicketDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketDemo.h; sourceTree = "<group>"; };
+		A448054A28191464005CB27A /* TicketDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketDemo.m; sourceTree = "<group>"; };
+		A448054C281919E5005CB27A /* EatDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EatDemo.h; sourceTree = "<group>"; };
+		A448054D281919E5005CB27A /* EatDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EatDemo.m; sourceTree = "<group>"; };
+		A448054F28191BB9005CB27A /* ThreadNum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadNum.h; sourceTree = "<group>"; };
+		A448055028191BB9005CB27A /* ThreadNum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadNum.m; sourceTree = "<group>"; };
+		A448055228191F10005CB27A /* LoadingPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingPhoto.h; sourceTree = "<group>"; };
+		A448055328191F10005CB27A /* LoadingPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,14 @@
 				A448053A2817CB76005CB27A /* LaunchScreen.storyboard */,
 				A448053D2817CB76005CB27A /* Info.plist */,
 				A448053E2817CB76005CB27A /* main.m */,
+				A448054928191464005CB27A /* TicketDemo.h */,
+				A448054A28191464005CB27A /* TicketDemo.m */,
+				A448054C281919E5005CB27A /* EatDemo.h */,
+				A448054D281919E5005CB27A /* EatDemo.m */,
+				A448054F28191BB9005CB27A /* ThreadNum.h */,
+				A448055028191BB9005CB27A /* ThreadNum.m */,
+				A448055228191F10005CB27A /* LoadingPhoto.h */,
+				A448055328191F10005CB27A /* LoadingPhoto.m */,
 			);
 			path = "Interview-GCD信号量";
 			sourceTree = "<group>";
@@ -146,8 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A448055128191BB9005CB27A /* ThreadNum.m in Sources */,
+				A448055428191F10005CB27A /* LoadingPhoto.m in Sources */,
 				A44805342817CB75005CB27A /* ViewController.m in Sources */,
 				A448052E2817CB75005CB27A /* AppDelegate.m in Sources */,
+				A448054B28191464005CB27A /* TicketDemo.m in Sources */,
+				A448054E281919E5005CB27A /* EatDemo.m in Sources */,
 				A448053F2817CB76005CB27A /* main.m in Sources */,
 				A44805312817CB75005CB27A /* SceneDelegate.m in Sources */,
 			);
