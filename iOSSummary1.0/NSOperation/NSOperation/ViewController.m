@@ -26,13 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self operation];
+    //[self operation];
     // NSBlockOperation 自动开启新线程 + blockOperationWithBlock 在非当前线程执行
     //[self useBlockOperationAddExecutionBlock];
-    //[self setMaxConcurrentOperationCount];
+    [self setMaxConcurrentOperationCount];
     //[self addDependency];
     //[self communication];
-    [self initTicketStatusSave];
+    //[self initTicketStatusSave];
 }
 
 - (void)operation {
@@ -118,7 +118,7 @@
             NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
         }
     }];
-
+    
     // 2.添加额外的操作
     [op addExecutionBlock:^{
         for (int i = 0; i < 2; i++) {
@@ -192,18 +192,23 @@
             NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
         }
     }];
+    NSLog(@"目前queue=%d",queue.operationCount);
+    
     [queue addOperationWithBlock:^{
         for (int i = 0; i < 2; i++) {
             [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
             NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
         }
     }];
+    
+    NSLog(@"目前queue=%d",queue.operationCount);
     [queue addOperationWithBlock:^{
         for (int i = 0; i < 2; i++) {
             [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
             NSLog(@"3---%@", [NSThread currentThread]); // 打印当前线程
         }
     }];
+  
     [queue addOperationWithBlock:^{
         for (int i = 0; i < 2; i++) {
             [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
