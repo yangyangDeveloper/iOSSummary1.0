@@ -22,6 +22,11 @@
 		A44805DE281A9654005CB27A /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805DD281A9654005CB27A /* VC2.m */; };
 		A44805E1281A965F005CB27A /* VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805E0281A965F005CB27A /* VC3.m */; };
 		A44805E5281A9A60005CB27A /* UIButton+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805E4281A9A60005CB27A /* UIButton+Swizzling.m */; };
+		A44805ED281BD7D6005CB27A /* UITableView+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805EC281BD7D6005CB27A /* UITableView+Swizzling.m */; };
+		A44805F0281BD936005CB27A /* ZYYPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805EF281BD936005CB27A /* ZYYPlaceholderView.m */; };
+		A44805F3281BDB92005CB27A /* ZYYUITableview.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805F2281BDB92005CB27A /* ZYYUITableview.m */; };
+		A44805F6281BDBA8005CB27A /* VC4.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805F5281BDBA8005CB27A /* VC4.m */; };
+		A44805F9281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805F8281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,16 @@
 		A44805E0281A965F005CB27A /* VC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC3.m; sourceTree = "<group>"; };
 		A44805E3281A9A60005CB27A /* UIButton+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Swizzling.h"; sourceTree = "<group>"; };
 		A44805E4281A9A60005CB27A /* UIButton+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Swizzling.m"; sourceTree = "<group>"; };
+		A44805EB281BD7D6005CB27A /* UITableView+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Swizzling.h"; sourceTree = "<group>"; };
+		A44805EC281BD7D6005CB27A /* UITableView+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Swizzling.m"; sourceTree = "<group>"; };
+		A44805EE281BD936005CB27A /* ZYYPlaceholderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYPlaceholderView.h; sourceTree = "<group>"; };
+		A44805EF281BD936005CB27A /* ZYYPlaceholderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYPlaceholderView.m; sourceTree = "<group>"; };
+		A44805F1281BDB92005CB27A /* ZYYUITableview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYUITableview.h; sourceTree = "<group>"; };
+		A44805F2281BDB92005CB27A /* ZYYUITableview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYUITableview.m; sourceTree = "<group>"; };
+		A44805F4281BDBA8005CB27A /* VC4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC4.h; sourceTree = "<group>"; };
+		A44805F5281BDBA8005CB27A /* VC4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC4.m; sourceTree = "<group>"; };
+		A44805F7281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZYYUITableview+ReloadDataSwizzling.h"; sourceTree = "<group>"; };
+		A44805F8281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZYYUITableview+ReloadDataSwizzling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 		A44805B3281A7378005CB27A /* MethodSwizzling */ = {
 			isa = PBXGroup;
 			children = (
+				A44805EA281BD7AF005CB27A /* 占位图 */,
 				A44805E2281A967B005CB27A /* SWVC */,
 				A44805B4281A7378005CB27A /* AppDelegate.h */,
 				A44805B5281A7378005CB27A /* AppDelegate.m */,
@@ -122,6 +138,23 @@
 				A44805D7281A9254005CB27A /* UIViewController+Swizzling.m */,
 			);
 			path = SWVC;
+			sourceTree = "<group>";
+		};
+		A44805EA281BD7AF005CB27A /* 占位图 */ = {
+			isa = PBXGroup;
+			children = (
+				A44805EB281BD7D6005CB27A /* UITableView+Swizzling.h */,
+				A44805EC281BD7D6005CB27A /* UITableView+Swizzling.m */,
+				A44805EE281BD936005CB27A /* ZYYPlaceholderView.h */,
+				A44805EF281BD936005CB27A /* ZYYPlaceholderView.m */,
+				A44805F1281BDB92005CB27A /* ZYYUITableview.h */,
+				A44805F2281BDB92005CB27A /* ZYYUITableview.m */,
+				A44805F4281BDBA8005CB27A /* VC4.h */,
+				A44805F5281BDBA8005CB27A /* VC4.m */,
+				A44805F7281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.h */,
+				A44805F8281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.m */,
+			);
+			path = "占位图";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44805E1281A965F005CB27A /* VC3.m in Sources */,
+				A44805F3281BDB92005CB27A /* ZYYUITableview.m in Sources */,
+				A44805F9281BE19F005CB27A /* ZYYUITableview+ReloadDataSwizzling.m in Sources */,
 				A44805D8281A9254005CB27A /* UIViewController+Swizzling.m in Sources */,
 				A44805BC281A7378005CB27A /* ViewController.m in Sources */,
 				A44805B6281A7378005CB27A /* AppDelegate.m in Sources */,
@@ -203,7 +238,10 @@
 				A44805D5281A7A32005CB27A /* Person.m in Sources */,
 				A44805CF281A73A5005CB27A /* ZYYPerson.m in Sources */,
 				A44805C7281A737A005CB27A /* main.m in Sources */,
+				A44805F0281BD936005CB27A /* ZYYPlaceholderView.m in Sources */,
+				A44805ED281BD7D6005CB27A /* UITableView+Swizzling.m in Sources */,
 				A44805B9281A7378005CB27A /* SceneDelegate.m in Sources */,
+				A44805F6281BDBA8005CB27A /* VC4.m in Sources */,
 				A44805D2281A7624005CB27A /* ZYYPerson+Swizzling.m in Sources */,
 				A44805DE281A9654005CB27A /* VC2.m in Sources */,
 			);
