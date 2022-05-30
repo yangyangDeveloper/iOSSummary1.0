@@ -14,6 +14,11 @@
 		A443135C2840A40100CC7E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A443135B2840A40100CC7E3A /* Assets.xcassets */; };
 		A443135F2840A40100CC7E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443135D2840A40100CC7E3A /* LaunchScreen.storyboard */; };
 		A44313622840A40100CC7E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44313612840A40100CC7E3A /* main.m */; };
+		A443136A2840A41800CC7E3A /* ZYYView.m in Sources */ = {isa = PBXBuildFile; fileRef = A44313692840A41800CC7E3A /* ZYYView.m */; };
+		A4F51DF92844AC6500CE08FD /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F51DF82844AC6500CE08FD /* VC2.m */; };
+		A4F51DFC2844B33A00CE08FD /* VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F51DFB2844B33A00CE08FD /* VC3.m */; };
+		A4F51DFF2844C4C700CE08FD /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F51DFE2844C4C700CE08FD /* VC1.m */; };
+		A4F51E022844C64900CE08FD /* TestAniView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F51E012844C64900CE08FD /* TestAniView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,16 @@
 		A443135E2840A40100CC7E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A44313602840A40100CC7E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A44313612840A40100CC7E3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A44313682840A41800CC7E3A /* ZYYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYView.h; sourceTree = "<group>"; };
+		A44313692840A41800CC7E3A /* ZYYView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYView.m; sourceTree = "<group>"; };
+		A4F51DF72844AC6500CE08FD /* VC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2.h; sourceTree = "<group>"; };
+		A4F51DF82844AC6500CE08FD /* VC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2.m; sourceTree = "<group>"; };
+		A4F51DFA2844B33A00CE08FD /* VC3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC3.h; sourceTree = "<group>"; };
+		A4F51DFB2844B33A00CE08FD /* VC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC3.m; sourceTree = "<group>"; };
+		A4F51DFD2844C4C700CE08FD /* VC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
+		A4F51DFE2844C4C700CE08FD /* VC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC1.m; sourceTree = "<group>"; };
+		A4F51E002844C64900CE08FD /* TestAniView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAniView.h; sourceTree = "<group>"; };
+		A4F51E012844C64900CE08FD /* TestAniView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAniView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +87,16 @@
 				A443135D2840A40100CC7E3A /* LaunchScreen.storyboard */,
 				A44313602840A40100CC7E3A /* Info.plist */,
 				A44313612840A40100CC7E3A /* main.m */,
+				A44313682840A41800CC7E3A /* ZYYView.h */,
+				A44313692840A41800CC7E3A /* ZYYView.m */,
+				A4F51DF72844AC6500CE08FD /* VC2.h */,
+				A4F51DF82844AC6500CE08FD /* VC2.m */,
+				A4F51DFA2844B33A00CE08FD /* VC3.h */,
+				A4F51DFB2844B33A00CE08FD /* VC3.m */,
+				A4F51DFD2844C4C700CE08FD /* VC1.h */,
+				A4F51DFE2844C4C700CE08FD /* VC1.m */,
+				A4F51E002844C64900CE08FD /* TestAniView.h */,
+				A4F51E012844C64900CE08FD /* TestAniView.m */,
 			);
 			path = "Interview-UI";
 			sourceTree = "<group>";
@@ -147,8 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44313572840A40000CC7E3A /* ViewController.m in Sources */,
+				A4F51DFC2844B33A00CE08FD /* VC3.m in Sources */,
+				A4F51DFF2844C4C700CE08FD /* VC1.m in Sources */,
+				A4F51E022844C64900CE08FD /* TestAniView.m in Sources */,
 				A44313512840A40000CC7E3A /* AppDelegate.m in Sources */,
 				A44313622840A40100CC7E3A /* main.m in Sources */,
+				A4F51DF92844AC6500CE08FD /* VC2.m in Sources */,
+				A443136A2840A41800CC7E3A /* ZYYView.m in Sources */,
 				A44313542840A40000CC7E3A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
