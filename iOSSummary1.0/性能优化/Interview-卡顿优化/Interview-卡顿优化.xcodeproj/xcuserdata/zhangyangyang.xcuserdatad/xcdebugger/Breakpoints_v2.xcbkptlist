@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D11B7110-08A6-47FF-91D5-D5858E8777F0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CA5479A-17D2-42EA-90B9-D77239D890E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A5D1C54-8132-4C41-9251-BA1FCE3A159A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-image"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A5D1C54-8132-4C41-9251-BA1FCE3A159A - 6f3e17d9e6a389d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController image]"
+                  moduleName = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyangyang/Desktop/Interview-%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/Interview-%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/ViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "4A5D1C54-8132-4C41-9251-BA1FCE3A159A - 1b336a0361e7b205"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__23-[ViewController image]_block_invoke"
+                  moduleName = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangyangyang/Desktop/Interview-%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/Interview-%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/ViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFADBA18-C94E-4AD5-BBDB-E99A34BB1C8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-image"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F06741BC-DDEC-4C6C-87E5-8A05F19696D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Interview-&#x5361;&#x987f;&#x4f18;&#x5316;/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-image"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
