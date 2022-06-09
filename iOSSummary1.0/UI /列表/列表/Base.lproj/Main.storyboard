@@ -24,6 +24,22 @@
             </objects>
             <point key="canvasLocation" x="-751" y="-275"/>
         </scene>
+        <!--VC4-->
+        <scene sceneID="jpZ-Wa-SBP">
+            <objects>
+                <viewController id="IlM-Tt-VtK" customClass="VC4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7BJ-Gs-tAp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="C0V-ht-Yyl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ilK-Sb-Gji"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekO-G4-Cyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="-157"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -73,6 +89,15 @@
                                 <buttonConfiguration key="configuration" style="plain" title="cell复用计算高度 "/>
                                 <connections>
                                     <segue destination="2dy-g1-nFH" kind="show" id="FVP-nU-XBE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2B-ef-nMN">
+                                <rect key="frame" x="67" y="433" width="253" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="cell复用重叠问题"/>
+                                <connections>
+                                    <segue destination="IlM-Tt-VtK" kind="show" id="U1y-Bx-WUn"/>
                                 </connections>
                             </button>
                         </subviews>
