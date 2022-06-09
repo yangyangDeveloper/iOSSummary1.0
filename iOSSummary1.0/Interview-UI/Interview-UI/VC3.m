@@ -40,6 +40,7 @@
     self.colorLayer.position = CGPointMake(self.layerView.bounds.size.width / 2, self.layerView.bounds.size.height / 2);
     self.colorLayer.backgroundColor = [UIColor blueColor].CGColor;
     //add a custom action
+    
     CATransition *transition = [CATransition animation];
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromLeft;

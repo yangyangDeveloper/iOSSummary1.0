@@ -64,11 +64,20 @@
 }
 
 
-- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
-    [super drawLayer:layer inContext:ctx];
-}
+//- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+//    [super drawLayer:layer inContext:ctx];
+//}
 
 - (void)setNeedsLayout {
     [super setNeedsLayout];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+}
+- (void)layoutSublayersOfLayer:(CALayer *)layer {
+    [super layoutSublayersOfLayer:layer];
+    
 }
 @end

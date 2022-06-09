@@ -10,7 +10,7 @@
 #import "VC2.h"
 #import "VC3.h"
 #import "VC1.h"
-
+#import "VC4.h"
 
 @interface ViewController ()
 @property (nonatomic, strong)ZYYView *zyy;
@@ -28,7 +28,7 @@
     // [self testRunloopLayer];
     // [self testdelayLayer];
     //[self testAni];
-   // [self ani1];
+   //[self ani1];
 }
 
 // 测试圆角
@@ -47,16 +47,24 @@
 // 测试UIview的隐式动画
 - (void)ani1 {
     self.zyy = [[ZYYView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    self.zyy.backgroundColor = [UIColor greenColor];
+    //self.zyy.backgroundColor = [UIColor greenColor];
     self.zyy.center = self.view.center;
     [self.view addSubview:self.zyy];
+    self.zyy.layer.cornerRadius = 100;
+    self.zyy.layer.masksToBounds = YES;
     self.zyy.layer.backgroundColor = [UIColor yellowColor].CGColor;
-    NSLog(@"&&&& %@",self.zyy.layer);
+    //self.zyy.layer.contents=(id)[UIImage imageNamed:@"me"].CGImage;
+    self.zyy.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.zyy.layer.borderWidth = 5;
+    NSLog(@"&&&& %@",self.zyy.layer.sublayers);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    VC1 *vc1 = [[VC1 alloc] init];
-    [self.navigationController pushViewController:vc1 animated:true];
+    //[self ani1];
+    //[self.view addSubview:self.zyy];
+    //self.zyy.backgroundColor = [UIColor yellowColor];
+    VC4 *vc4 = [[VC4 alloc] init];
+    [self.navigationController pushViewController:vc4 animated:true];
 //
 //    [self.view.layer.modelLayer ]
 //    self.zyy.layer.backgroundColor = [UIColor yellowColor].CGColor;
