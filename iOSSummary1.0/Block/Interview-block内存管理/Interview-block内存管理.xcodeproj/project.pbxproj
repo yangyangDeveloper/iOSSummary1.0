@@ -44,6 +44,14 @@
 		A4A6DF2F27B3AE1C0063B73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A6DF3027B3AE1C0063B73A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4A6DF3D27B3AE9C0063B73A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A4BF96E52851EE4C00269FEE /* Case1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case1.h; sourceTree = "<group>"; };
+		A4BF96E62851EE4C00269FEE /* M2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M2.h; sourceTree = "<group>"; };
+		A4BF96E72851EE4C00269FEE /* M1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M1.h; sourceTree = "<group>"; };
+		A4BF96E82851EE4D00269FEE /* M5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M5.h; sourceTree = "<group>"; };
+		A4BF96E92851EE4D00269FEE /* M0.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M0.h; sourceTree = "<group>"; };
+		A4BF96EA2851EE4D00269FEE /* M3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3.h; sourceTree = "<group>"; };
+		A4BF96EB2851EE4D00269FEE /* MRC .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MRC .h"; sourceTree = "<group>"; };
+		A4BF96EC2851EE4D00269FEE /* M4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M4.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,14 @@
 		A4A6DF1D27B3AE1A0063B73A /* Interview-block内存管理 */ = {
 			isa = PBXGroup;
 			children = (
+				A4BF96E52851EE4C00269FEE /* Case1.h */,
+				A4BF96E92851EE4D00269FEE /* M0.h */,
+				A4BF96E72851EE4C00269FEE /* M1.h */,
+				A4BF96E62851EE4C00269FEE /* M2.h */,
+				A4BF96EA2851EE4D00269FEE /* M3.h */,
+				A4BF96EC2851EE4D00269FEE /* M4.h */,
+				A4BF96E82851EE4D00269FEE /* M5.h */,
+				A4BF96EB2851EE4D00269FEE /* MRC .h */,
 				A4A6DF3D27B3AE9C0063B73A /* main.cpp */,
 				A4A6DF1E27B3AE1A0063B73A /* AppDelegate.h */,
 				A4A6DF1F27B3AE1A0063B73A /* AppDelegate.m */,
