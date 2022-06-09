@@ -1,0 +1,18 @@
+
+
+{
+    "banners": [
+        {
+            "imgUrl": "https://www.baidu.com/img/flexible/logo/pc/result@2.png",
+            "action": "www.baidu.com",
+            
+        },
+        {
+            "imgUrl": "https://www.baidu.com/img/flexible/logo/pc/result@2.png",
+            "action": "",
+            
+        }
+    ],
+    "name" : "zyy"
+}
+
