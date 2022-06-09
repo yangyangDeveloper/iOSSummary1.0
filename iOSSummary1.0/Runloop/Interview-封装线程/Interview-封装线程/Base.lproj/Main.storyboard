@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mV1-Yc-mzS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="umw-cn-DyJ">
+            <objects>
+                <navigationController id="mV1-Yc-mzS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ws-uo-9iO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="94U-Wg-eN2" kind="relationship" relationship="rootViewController" id="DT4-mu-V5z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbs-gG-aM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1203" y="283"/>
+        </scene>
+        <!--VC5-->
+        <scene sceneID="fWb-bo-otR">
+            <objects>
+                <viewController id="jVr-S8-UmU" customClass="VC5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYB-Sl-eQx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvE-nk-7jz">
+                                <rect key="frame" x="41" y="235" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="开始执行任务"/>
+                                <connections>
+                                    <action selector="startwork:" destination="jVr-S8-UmU" eventType="touchUpInside" id="jf1-ak-GjX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz3-Ar-yr1">
+                                <rect key="frame" x="50" y="404" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="关闭runloop"/>
+                                <connections>
+                                    <action selector="closeRunloop:" destination="jVr-S8-UmU" eventType="touchUpInside" id="uA5-TO-gkY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PHY-uA-RzW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1QL-RJ-xaB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZ1-Mj-Tx9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="1120"/>
+        </scene>
+        <!--VC6-->
+        <scene sceneID="4na-5k-IVE">
+            <objects>
+                <viewController id="4TX-wY-cex" customClass="VC6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bxx-Qd-1AA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvb-98-eH9">
+                                <rect key="frame" x="71" y="334" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="结束常驻线程"/>
+                                <connections>
+                                    <action selector="stop:" destination="4TX-wY-cex" eventType="touchUpInside" id="0Cx-Tn-6Is"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="icP-SL-cEt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Il4-7E-GgT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJK-O3-UAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="935"/>
+        </scene>
+        <!--VC4-->
+        <scene sceneID="J0U-Fs-l2r">
+            <objects>
+                <viewController id="i9X-vv-KI8" customClass="VC4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G4T-uD-I1t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NXg-6G-j4J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f2G-7V-zKT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyE-ZB-trO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="1215"/>
+        </scene>
+        <!--VC2-->
+        <scene sceneID="YVG-VA-tm4">
+            <objects>
+                <viewController id="klP-n9-jgA" customClass="VC2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QH7-Sn-ElE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gr9-tI-J1s">
+                                <rect key="frame" x="70" y="178" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="停止"/>
+                                <connections>
+                                    <action selector="stop" destination="klP-n9-jgA" eventType="touchUpInside" id="WBf-sA-7Ff"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="07s-qa-A8E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Px7-bm-Fg1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6r-Ur-JLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="-527"/>
+        </scene>
+        <!--VC3-->
+        <scene sceneID="lSs-Ku-Z4D">
+            <objects>
+                <viewController id="Men-8d-FiD" customClass="VC3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mlm-5B-8HX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pvX-Og-DSU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r4t-MU-yUC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6A4-IW-VBY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="-244"/>
+        </scene>
+        <!--VC7-->
+        <scene sceneID="bLA-8q-mb1">
+            <objects>
+                <viewController id="aS9-2R-cJ7" customClass="VC7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ob8-Em-MJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzt-RR-GIp">
+                                <rect key="frame" x="60" y="312" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="结束常驻线程"/>
+                                <connections>
+                                    <action selector="stop:" destination="aS9-2R-cJ7" eventType="touchUpInside" id="du4-DR-Ie1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3A2-28-ECO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u7z-O1-8ek"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NHM-qX-8wO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="591"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xGe-is-f3N">
+            <objects>
+                <viewController id="94U-Wg-eN2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRO-Lk-cL0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWU-hK-HeX">
+                                <rect key="frame" x="46" y="137" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="最简单 - 线程保活"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="MWU-1i-iZ5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGA-gm-AW0">
+                                <rect key="frame" x="45" y="255" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="控制常驻线程生死"/>
+                                <connections>
+                                    <segue destination="klP-n9-jgA" kind="show" id="jgk-2Y-9sU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOL-bP-eg5">
+                                <rect key="frame" x="45" y="373" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="线程循环引用"/>
+                                <connections>
+                                    <segue destination="Men-8d-FiD" kind="show" id="Qyt-3Q-NIG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-hN-lZu">
+                                <rect key="frame" x="45" y="502" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="大循环引用"/>
+                                <connections>
+                                    <segue destination="i9X-vv-KI8" kind="show" id="MZG-YS-8oi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tE8-Ez-eep">
+                                <rect key="frame" x="46" y="601" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="最终完美写法"/>
+                                <connections>
+                                    <segue destination="jVr-S8-UmU" kind="show" id="XwQ-Ew-qm2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpM-qY-FpT">
+                                <rect key="frame" x="46" y="701" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="封装一条常驻线程"/>
+                                <connections>
+                                    <segue destination="4TX-wY-cex" kind="show" id="Tmg-Xg-l1T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnA-Ej-qHx">
+                                <rect key="frame" x="46" y="785" width="135" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="使用c 封装常驻线程"/>
+                                <connections>
+                                    <segue destination="aS9-2R-cJ7" kind="show" id="nUS-ga-BuG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hlS-35-SBI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AfV-qx-gJ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SA-8Q-A88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-428.98550724637687" y="268.52678571428572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuI-Nk-7Kw">
+                                <rect key="frame" x="44" y="249" width="46" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FHL-AJ-hAW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="-704"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
