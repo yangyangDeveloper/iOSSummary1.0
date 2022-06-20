@@ -35,4 +35,10 @@
     CGContextDrawPath(ctx, kCGPathFillStroke);
 }
 
+- (void)displayLayer:(CALayer *)layer {
+    
+}
+
+
+
 @end

@@ -20,6 +20,8 @@
    // [view updateContents];
     view.backgroundColor= [UIColor colorWithRed:249.0/255.0 green:249.0/255.0 blue:249.0/255.0 alpha:1];
     [self.view addSubview:view];
+    
+    UIImage *t = [UIImage ]
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

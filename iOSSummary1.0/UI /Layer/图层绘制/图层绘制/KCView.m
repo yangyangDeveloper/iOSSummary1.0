@@ -26,11 +26,20 @@
     return self;
 }
 
-- (void)drawRect:(CGRect)rect{
-    NSLog(@"2-drawRect:");
-    NSLog(@"CGContext:%@",UIGraphicsGetCurrentContext()); //得到的当前图形上下文正是drawLayer中传递的
-    [super drawRect:rect];
-}
+
+
+//    NSLog(@"2-drawRect:");
+//    NSLog(@"CGContext:%@",UIGraphicsGetCurrentContext()); //得到的当前图形上下文正是drawLayer中传递的
+//    [super drawRect:rect];
+//}
+
+// 调用之前创建空寄宿图 和cg上下文 #1    0x00007fff288e8794 in CABackingStoreUpdate_ ()
+
+// view自带的layer会实现displayLayer 所以后面的方法都不会走了
+// 如果drawRect方法实现了 那么就会调用displayLayer  然后是 创建上下文调用 -drawLayer:inContext:
+//- (void)displayLayer:(CALayer *)layer {
+//    
+//}
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
     NSLog(@"1-drawLayer:inContext:");

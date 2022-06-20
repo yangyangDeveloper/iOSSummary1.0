@@ -27,10 +27,11 @@
     layer.borderWidth = 2;
     layer.delegate = self;
     [self.view.layer addSublayer:layer];
+    
 //    UIImage *headerImage = [UIImage imageNamed:@"me"];
 //    layer.contents = (__bridge id)headerImage.CGImage;
     
-    [layer setNeedsDisplay];
+    //[layer setNeedsDisplay];
     NSLog(@"layer==%@",layer);
 }
 
