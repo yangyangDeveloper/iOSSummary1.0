@@ -8,10 +8,17 @@
 #import "VC3.h"
 
 /*
- Core Animation来决定如何并且何时去做动画
- 动画执行的时间取决于当前事务的设置，动画类型取决于图层行为(action)
- 
+ 隐式动画 由Core Animation来决定如何并且何时去做动画
+ 动画执行的时间取决于当前事务的设置，、
+ 动画类型取决于图层行为(action)
  */
+
+// 自定义图层属性行为
+// CATransition响应CAAction协议，并且可以当做一个图层行为
+// 不论在什么时候改变背景颜色，新的色块都是从左侧滑入，而不是默认的渐变效果
+// 直接创建一个显式动画对象
+// Core Animation隐式调用    隐式动画对象/或者我们自己创建的显式动画对象
+
 @interface VC3 ()
 
 @property (nonatomic, strong) CALayer *colorLayer;
@@ -20,12 +27,7 @@
 
 @implementation VC3
 
-// 自定义图层属性行为
-// CATransition响应CAAction协议，并且可以当做一个图层行为
-// 不论在什么时候改变背景颜色，新的色块都是从左侧滑入，而不是默认的渐变效果
-// 直接创建一个显式动画对象
-// Core Animation隐式调用    隐式动画对象/或者我们自己创建的显式动画对象   
-
+ 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
@@ -54,7 +56,6 @@
     
     //add it to our view
     [self.layerView.layer addSublayer:self.colorLayer];
-
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

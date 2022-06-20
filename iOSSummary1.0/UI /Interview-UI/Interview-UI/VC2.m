@@ -6,11 +6,7 @@
 //
 
 #import "VC2.h"
-
-// 直接操作单个图层 默认有隐式动画
-
 /*
- 
  设置的属性是动画结束之后的值 是一个最终值和真实值
  过程中 当前现实在屏幕上的属性值 是呈现树
  
@@ -20,6 +16,7 @@
  呈现图层的应用
  一个是同步动画，一个是处理用户交互
  */
+
 @interface VC2 ()
 @property (nonatomic, strong) CALayer *colorLayer;
 @end

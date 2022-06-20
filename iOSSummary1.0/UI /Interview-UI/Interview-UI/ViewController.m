@@ -10,7 +10,6 @@
 #import "VC2.h"
 #import "VC3.h"
 #import "VC1.h"
-#import "VC4.h"
 
 @interface ViewController ()
 @property (nonatomic, strong)ZYYView *zyy;

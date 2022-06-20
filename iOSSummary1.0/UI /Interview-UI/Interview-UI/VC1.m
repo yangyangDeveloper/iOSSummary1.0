@@ -37,7 +37,7 @@
 }
 
 // 自定义事务  改变单独图层颜色
-- (void)changeColor
+- (void)changeColor1
 {
     //begin a new transaction  养成好习惯 调整动画之前压入一个新的事务
     [CATransaction begin];
@@ -76,7 +76,6 @@
     //commit the transaction
     [CATransaction commit];
 }
-
 
 // 使用新事务  没有平滑动画
 - (void)changeViewLayerColor {
@@ -150,7 +149,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     // 平滑动画
-    [self changeColor];
+    [self changeColor1];
     
     // 平滑动画+动画完成回调
     [self changeColor2];
@@ -158,16 +157,6 @@
     // 没有平滑动画
     [self changeViewLayerColor];
 }
-
-/*
- 
- 事务：隐式事务  显式事务
- 1、对图层树的每次修改都必须是事务的一部分
- 2、任何可动画的图层属性，发生改变产生的动画都会被添加到栈顶的事务 （自己创建的也会放到栈顶）
- 3、当图层树被没有显式事务的线程修改时，隐式事务会自动创建，并在线程的 runloop 下一次迭代时自动提交，
- 4、即使你不显式地使用[CATransaction begin]开始一次事务，在一个特定runloop循环中的任何属性的变化都会被收集起来，然后做一次0.25秒的动画
- 5、当应用程序在修改图层树之前向 CATransaction 类发送 begin() 消息，然后向 CATransaction 类发送 commit() 消息时，就会发生显式事务
- */
 
 /*
  隐式动画：不需要我们指定动画类型  Core Animation来决定如何并且何时去做动画

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A49287B82860794B00EC7628 /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287B62860794B00EC7628 /* VC1.m */; };
+		A49287BB2860797200EC7628 /* TestAniView.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287BA2860797200EC7628 /* TestAniView.m */; };
+		A49287BE28607A7300EC7628 /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287BC28607A7200EC7628 /* VC2.m */; };
+		A49287C128607B5900EC7628 /* VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287C028607B5900EC7628 /* VC3.m */; };
 		A4F94C8D2860668F00B7AE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F94C8C2860668F00B7AE6D /* AppDelegate.m */; };
 		A4F94C902860668F00B7AE6D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F94C8F2860668F00B7AE6D /* SceneDelegate.m */; };
 		A4F94C932860668F00B7AE6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F94C922860668F00B7AE6D /* ViewController.m */; };
@@ -18,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A49287B62860794B00EC7628 /* VC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC1.m; path = "../../../Interview-UI/Interview-UI/VC1.m"; sourceTree = "<group>"; };
+		A49287B72860794B00EC7628 /* VC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC1.h; path = "../../../Interview-UI/Interview-UI/VC1.h"; sourceTree = "<group>"; };
+		A49287B92860797200EC7628 /* TestAniView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestAniView.h; path = "../../../Interview-UI/Interview-UI/TestAniView.h"; sourceTree = "<group>"; };
+		A49287BA2860797200EC7628 /* TestAniView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestAniView.m; path = "../../../Interview-UI/Interview-UI/TestAniView.m"; sourceTree = "<group>"; };
+		A49287BC28607A7200EC7628 /* VC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC2.m; path = "../../../Interview-UI/Interview-UI/VC2.m"; sourceTree = "<group>"; };
+		A49287BD28607A7300EC7628 /* VC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC2.h; path = "../../../Interview-UI/Interview-UI/VC2.h"; sourceTree = "<group>"; };
+		A49287BF28607B5800EC7628 /* VC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VC3.h; path = "../../../Interview-UI/Interview-UI/VC3.h"; sourceTree = "<group>"; };
+		A49287C028607B5900EC7628 /* VC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VC3.m; path = "../../../Interview-UI/Interview-UI/VC3.m"; sourceTree = "<group>"; };
 		A4F94C882860668F00B7AE6D /* 隐式动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "隐式动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F94C8B2860668F00B7AE6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4F94C8C2860668F00B7AE6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,8 +76,16 @@
 		A4F94C8A2860668F00B7AE6D /* 隐式动画 */ = {
 			isa = PBXGroup;
 			children = (
+				A49287B72860794B00EC7628 /* VC1.h */,
+				A49287B62860794B00EC7628 /* VC1.m */,
+				A49287BD28607A7300EC7628 /* VC2.h */,
+				A49287BC28607A7200EC7628 /* VC2.m */,
+				A49287BF28607B5800EC7628 /* VC3.h */,
+				A49287C028607B5900EC7628 /* VC3.m */,
 				A4F94CA52860669B00B7AE6D /* ZYYView.h */,
 				A4F94CA42860669B00B7AE6D /* ZYYView.m */,
+				A49287B92860797200EC7628 /* TestAniView.h */,
+				A49287BA2860797200EC7628 /* TestAniView.m */,
 				A4F94C8B2860668F00B7AE6D /* AppDelegate.h */,
 				A4F94C8C2860668F00B7AE6D /* AppDelegate.m */,
 				A4F94C8E2860668F00B7AE6D /* SceneDelegate.h */,
@@ -151,9 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49287B82860794B00EC7628 /* VC1.m in Sources */,
 				A4F94C932860668F00B7AE6D /* ViewController.m in Sources */,
 				A4F94C8D2860668F00B7AE6D /* AppDelegate.m in Sources */,
+				A49287BE28607A7300EC7628 /* VC2.m in Sources */,
+				A49287BB2860797200EC7628 /* TestAniView.m in Sources */,
 				A4F94C9E2860669100B7AE6D /* main.m in Sources */,
+				A49287C128607B5900EC7628 /* VC3.m in Sources */,
 				A4F94CA62860669B00B7AE6D /* ZYYView.m in Sources */,
 				A4F94C902860668F00B7AE6D /* SceneDelegate.m in Sources */,
 			);
