@@ -25,6 +25,22 @@
  [CATransaction commit];
 */
 
+/*
+ 
+ 
+ [CATransaction begin];
+ UIImage *image = [UIImage imageNamed:@"me"];
+ weakSelf.layer.contents = (__bridge id)image.CGImage;
+ [CATransaction commit];
+ 
+ [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
+ [[NSRunLoop currentRunLoop] run];
+ 
+ */
+//
+
+
+
 // 子线程
 - (void)updateContentsInsubThreads {
     
@@ -32,33 +48,43 @@
     
     dispatch_queue_t layerQueue = dispatch_queue_create("zyy", DISPATCH_QUEUE_CONCURRENT);
     
+    
     dispatch_async(layerQueue, ^{
-        NSLog(@"currentthread=%@", [NSThread currentThread]);
-        [[NSThread currentThread] setName:@"zyy_thread"];
+        //NSLog(@"currentthread=%@", [NSThread currentThread]);
+        
         [NSThread sleepForTimeInterval:2];
-        UIImage *image = [UIImage imageNamed:@"me"];
-        [CATransaction begin];
-        weakSelf.layer.backgroundColor = [UIColor redColor].CGColor;
-        weakSelf.layer.contents = (__bridge  id)image.CGImage;
-        [CATransaction commit];
+        NSLog(@"休眠结束");
+        
+        weakSelf.layer.backgroundColor = [UIColor blueColor].CGColor;
+        //[weakSelf getthead:layerQueue];
+  
+        
+        //[NSThread sleepForTimeInterval:10];
         NSLog(@"变色");
-        [CATransaction setCompletionBlock:^{
-            NSLog(@"currentthread=%@", [NSThread currentThread]);
-        }];
+//        [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
+//        [[NSRunLoop currentRunLoop] run];
     });
 }
 
 // 主线程
 - (void)updateContents {
-    NSLog(@"currentthread=%@", [NSThread currentThread]);
+    //NSLog(@"currentthread=%@", [NSThread currentThread]);
     UIImage *image = [UIImage imageNamed:@"me"];
     self.layer.backgroundColor = [UIColor redColor].CGColor;
     self.layer.contents = (__bridge  id)image.CGImage;
-    [CATransaction setCompletionBlock:^{
-        NSLog(@"currentthread=%@", [NSThread currentThread]);
-    }];
+//    [CATransaction setCompletionBlock:^{
+//        NSLog(@"currentthread=%@", [NSThread currentThread]);
+//    }];
 }
 
+// 模拟其他地方需要大量的线程  目的是让系统尽快释放不需要的线程
+- (void)getthead:(dispatch_queue_t)queue {
+    for (int i = 0; i< 200; i++) {
+        dispatch_async(queue, ^{
+            [NSThread sleepForTimeInterval:1];
+        });
+    }
+}
 
 /*
 

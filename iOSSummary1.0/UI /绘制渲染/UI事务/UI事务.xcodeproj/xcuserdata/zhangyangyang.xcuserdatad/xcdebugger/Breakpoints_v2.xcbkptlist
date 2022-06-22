@@ -7,16 +7,25 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
-            uuid = "141D05FB-40D0-45A1-98F5-1E889EE5ADD0"
-            shouldBeEnabled = "No"
+            uuid = "1391B7C7-CF40-4194-BDCB-65BE00BC95FA"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "Transaction::commit()"
+            symbolName = "CA::Transaction::commit()"
             moduleName = "">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "CA::Transaction::commit()"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
             <Locations>
                <Location
-                  uuid = "141D05FB-40D0-45A1-98F5-1E889EE5ADD0 - 2bb7c458ff5d06ff"
-                  shouldBeEnabled = "No"
+                  uuid = "1391B7C7-CF40-4194-BDCB-65BE00BC95FA - 2bb7c458ff5d06ff"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "CA::Transaction::commit()"
@@ -24,46 +33,13 @@
                   usesParentBreakpointCondition = "Yes"
                   offsetFromSymbolStart = "0">
                </Location>
-               <Location
-                  uuid = "141D05FB-40D0-45A1-98F5-1E889EE5ADD0 - d3c8d8b4de45a83b"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WebCore::SQLiteTransaction::commit()"
-                  moduleName = "WebCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
-            uuid = "C4FC0218-AAF2-42CF-93B1-B8F01DB658FB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            symbolName = "_pthread_tsd_cleanup"
-            moduleName = "">
-            <Locations>
-               <Location
-                  uuid = "C4FC0218-AAF2-42CF-93B1-B8F01DB658FB - d6f02b71d778130"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "_pthread_tsd_cleanup"
-                  moduleName = "libsystem_pthread.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
-         <BreakpointContent
-            uuid = "976BAFA0-38CE-4295-A716-E9ECA24CF51F"
+            uuid = "0C53D6A3-8437-4992-A198-CD448556E8D8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -73,14 +49,14 @@
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.Log">
                   <ActionContent
-                     message = "CA::Transaction::commit"
+                     message = "CA::Transaction::observer_callback"
                      conveyanceType = "0">
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
             <Locations>
                <Location
-                  uuid = "976BAFA0-38CE-4295-A716-E9ECA24CF51F - d8dc48bda419e1b4"
+                  uuid = "0C53D6A3-8437-4992-A198-CD448556E8D8 - d8dc48bda419e1b4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,39 +69,19 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "26FF3B7C-7483-45B2-908F-2C905DA10857"
-            shouldBeEnabled = "No"
+            uuid = "4931594D-6B76-4D77-9F14-C1779BD54363"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "CA::Transaction::commit"
-            moduleName = "">
-            <Locations>
-               <Location
-                  uuid = "26FF3B7C-7483-45B2-908F-2C905DA10857 - 2bb7c458ff5d06ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CA::Transaction::commit()"
-                  moduleName = "QuartzCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
-         <BreakpointContent
-            uuid = "BF8C110D-D7E3-484F-830E-EDA876E90B92"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            symbolName = ""
-            moduleName = "">
-            <Locations>
-            </Locations>
+            filePath = "UI&#x4e8b;&#x52a1;/VC1.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-test2"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

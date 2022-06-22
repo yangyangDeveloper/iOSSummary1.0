@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A49287C42862B62A00EC7628 /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287C32862B62A00EC7628 /* VC1.m */; };
+		A49287C72862BB8400EC7628 /* ZYYObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287C62862BB8400EC7628 /* ZYYObject.m */; };
+		A49287CA2862BB9800EC7628 /* ZYYThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287C92862BB9800EC7628 /* ZYYThread.m */; };
 		A4EC857728587F4F004014E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC857628587F4F004014E2 /* AppDelegate.m */; };
 		A4EC857A28587F4F004014E2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC857928587F4F004014E2 /* SceneDelegate.m */; };
 		A4EC857D28587F4F004014E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC857C28587F4F004014E2 /* ViewController.m */; };
@@ -18,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A49287C22862B62A00EC7628 /* VC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
+		A49287C32862B62A00EC7628 /* VC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC1.m; sourceTree = "<group>"; };
+		A49287C52862BB8300EC7628 /* ZYYObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYObject.h; sourceTree = "<group>"; };
+		A49287C62862BB8400EC7628 /* ZYYObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYObject.m; sourceTree = "<group>"; };
+		A49287C82862BB9800EC7628 /* ZYYThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYThread.h; sourceTree = "<group>"; };
+		A49287C92862BB9800EC7628 /* ZYYThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYThread.m; sourceTree = "<group>"; };
 		A4EC857228587F4F004014E2 /* UI事务.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI事务.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EC857528587F4F004014E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4EC857628587F4F004014E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +86,12 @@
 				A4EC858728587F51004014E2 /* main.m */,
 				A4EC858E28588088004014E2 /* ZYYView.h */,
 				A4EC858F28588088004014E2 /* ZYYView.m */,
+				A49287C22862B62A00EC7628 /* VC1.h */,
+				A49287C32862B62A00EC7628 /* VC1.m */,
+				A49287C52862BB8300EC7628 /* ZYYObject.h */,
+				A49287C62862BB8400EC7628 /* ZYYObject.m */,
+				A49287C82862BB9800EC7628 /* ZYYThread.h */,
+				A49287C92862BB9800EC7628 /* ZYYThread.m */,
 			);
 			path = "UI事务";
 			sourceTree = "<group>";
@@ -151,6 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49287C42862B62A00EC7628 /* VC1.m in Sources */,
+				A49287C72862BB8400EC7628 /* ZYYObject.m in Sources */,
+				A49287CA2862BB9800EC7628 /* ZYYThread.m in Sources */,
 				A4EC857D28587F4F004014E2 /* ViewController.m in Sources */,
 				A4EC857728587F4F004014E2 /* AppDelegate.m in Sources */,
 				A4EC858828587F51004014E2 /* main.m in Sources */,

@@ -55,24 +55,26 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor orangeColor];
     //view
-    [self testv1];
-    [self testv2];
-    [self testv3];
-    [self testv4];
-    [self testv5];
+//    [self testv1];
+//    [self testv2];
+//    [self testv3];
+//    [self testv4];
+//    [self testv5];
     
     // btn
-    [self testb1];
-    [self testb2];
+   // [self testb3];
+   // [self testb2];
     
     // imageview
-    [self testi1];
-    [self testi2];
+   // [self testi1];
+    //  [self testi2];
+    // [self testi3];
+      [self testi4];
 
     // label
-    [self testla1];
+//    [self testla1];
 }
 
 - (void)testv1 {
@@ -188,26 +190,10 @@
     [self.view addSubview:view1];
 }
 
+#pragma mark  btn 3种场景
 
-
+// content为空 不触发
 - (void)testb1 {
-    // 按钮存在背景图
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    // 图层图层
-    btn.backgroundColor = [UIColor greenColor];
-    btn.frame = CGRectMake(100, 160, 60, 60);
-    
-    [self.view addSubview:btn];
-    
-    // content图层
-    [btn setImage:[UIImage imageNamed:@"btnimage"] forState:UIControlStateNormal];
-    
-    // 裁切圆角
-    btn.layer.cornerRadius = 30;
-    btn.clipsToBounds = YES;
-}
-
-- (void)testb2 {
     // 按钮不存在背景图
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     // 背景图层
@@ -220,12 +206,77 @@
     btn2.layer.cornerRadius = 30;
 }
 
+// content 存在  btn image的时候 默认会创建一个imageview 所以这里有多图层 一个是btn 一个imageview 所以触发
+- (void)testb2 {
+    // 按钮存在背景图
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 160, 60, 60);
+    [self.view addSubview:btn];
+    
+    // content图层
+    [btn setImage:[UIImage imageNamed:@"me"] forState:UIControlStateNormal];
+    
+    // 裁切圆角
+    btn.layer.cornerRadius = 30;
+    btn.clipsToBounds = YES;
+}
+
+//  content存在 但是直接修改的是imageview的图层  所以不会触发离屏
+- (void)testb3 {
+    
+    // 按钮存在背景图
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+  
+    // 打开关闭 都不触发离屏渲染 因为下面的裁切和他没关系
+    btn.backgroundColor = [UIColor greenColor];
+    btn.frame = CGRectMake(100, 160, 60, 60);
+    
+    [self.view addSubview:btn];
+    
+    // content图层
+    [btn setImage:[UIImage imageNamed:@"me"] forState:UIControlStateNormal];
+    
+    // 裁切圆角
+    btn.imageView.layer.cornerRadius = 30;
+    btn.imageView.clipsToBounds = YES;
+}
+
+
+#pragma mark  imageview 2种场景
+
+// content 为空
 - (void)testi1 {
-    // 设置图片和背景色
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(100, 340, 60, 60)];
     
     // 背景图层
-    //imageview.backgroundColor = [UIColor orangeColor];
+    imageview.backgroundColor = [UIColor redColor];
+    [self.view addSubview:imageview];
+    
+    // 边框图层
+    imageview.layer.borderColor = [UIColor greenColor].CGColor;
+    imageview.layer.borderWidth = 3;
+
+    imageview.layer.cornerRadius = 30;
+    imageview.clipsToBounds = YES;
+}
+
+// content不为空
+- (void)testi2 {
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(100, 340, 60, 60)];
+    [self.view addSubview:imageview];
+    
+    // content图层
+    imageview.image = [UIImage imageNamed:@"me"];
+    imageview.layer.cornerRadius = 30;
+    imageview.clipsToBounds = YES;
+}
+
+// content不为空 + 边框 + 背景色  3图层     圆角 + clipsToBounds
+- (void)testi3 {
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(100, 340, 60, 60)];
+    
+    // 背景图层
+    imageview.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:imageview];
     
     // 边框图层
@@ -233,22 +284,28 @@
     imageview.layer.borderWidth = 3;
     
     // content图层
-    imageview.image = [UIImage imageNamed:@"btnimage"];
+    imageview.image = [UIImage imageNamed:@"me"];
     imageview.layer.cornerRadius = 30;
     imageview.clipsToBounds = YES;
 }
 
-- (void)testi2 {
-    // 设置图片  不设置背景色
-    UIImageView *imageview2 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 430, 60, 60)];
-    [self.view addSubview:imageview2];
-    imageview2.clipsToBounds = YES;
+// content不为空 + 边框 + 背景色 但是不进行clipsToBounds
+- (void)testi4 {
+   
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(100, 430, 60, 60)];
+ 
+    // 背景图层
+    imageview.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:imageview];
+    
+    // 边框图层
+    imageview.layer.borderColor = [UIColor greenColor].CGColor;
+    imageview.layer.borderWidth = 3;
     
     // content图层
-    imageview2.image = [UIImage imageNamed:@"btnimage"];
-    imageview2.layer.cornerRadius = 30;
+    imageview.image = [UIImage imageNamed:@"me"];
+    imageview.layer.cornerRadius = 30;
 }
-
 
 - (void)testla1 {
     
