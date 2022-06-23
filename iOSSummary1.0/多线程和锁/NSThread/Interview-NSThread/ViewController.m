@@ -6,31 +6,43 @@
 //
 
 #import "ViewController.h"
+#import "VC1.h"
+#import "VC2.h"
 
 /*
+   NSthread 使用
+    1、通过 alloc 来创建，需要手动开启
+    2、通过 detachNewThread 隐式创建并且直接开启
+    3、通过 performSelector系列函数  隐式创建来开启
+ */
+
+/*
+
+ performSelector系列
  
+ // 任意线程执行
  @interface NSObject (NSThreadPerformAdditions) {
     
      // 在主线程上执行操作
      - (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;
      - (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait modes:(NSArray<NSString *> *)array;
+    
+     // 后台线程
+     - (void)performSelectorInBackground:(SEL)aSelector withObject:(nullable id)arg
 
-
-     // 在指定线程上执行操作
+     // 在自定义线程上执行操作
      - (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(id)arg waitUntilDone:(BOOL)wait modes:(NSArray *)array
      - (void)performSelector:(SEL)aSelector onThread:(NSThread *)thr withObject:(id)arg waitUntilDone:(BOOL)wait
-     
- }
+}
 
- // 在当前线程上执行操作，调用 NSObject 的 performSelector:相关方法
- 
+ // 在当前线程上执行操作， 相当于 [a fun]   msgsend(a,@selector(fun))
  @interface NSObject {
     - (id)performSelector:(SEL)aSelector;
      - (id)performSelector:(SEL)aSelector withObject:(id)object;
      - (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;
  }
  
- 还有一个变种 带延迟的
+ // 带延迟的
  @interface NSObject (NSDelayedPerforming)
 
  - (void)performSelector:(SEL)aSelector withObject:(nullable id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray<NSRunLoopMode> *)modes;
@@ -40,9 +52,22 @@
 
  @end
 
+ */
 
+/*
+ 
+ 
+ NSThread 支持 KVO,可以监听到 thread 的执行状态
 
+ isExecuting是否正在执行
 
+ isCancelled是否被取消
+
+ isFinished是否完成
+
+ isMainThread是否是主线程
+
+ threadPriority优先级
  
  */
 @interface ViewController ()
@@ -53,46 +78,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self downloadTest];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)downloadTest {
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    self.imageView.center = self.view.center;
-    self.imageView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.imageView];
-    [self downloadImageOnSubThread];
-}
-/**
-  * 创建一个线程下载图片
-  */
-- (void)downloadImageOnSubThread {
-    // 在创建的子线程中调用downloadImage下载图片
-    [NSThread detachNewThreadSelector:@selector(downloadImage) toTarget:self withObject:nil];
-}
-
-- (void)downloadImage {
-    NSLog(@"current thread -- %@", [NSThread currentThread]);
-    
-    // 1. 获取图片 imageUrl
-    NSURL *imageUrl = [NSURL URLWithString:@"https://ysc-demo-1254961422.file.myqcloud.com/YSC-phread-NSThread-demo-icon.jpg"];
-    
-    // 2. 从 imageUrl 中读取数据(下载图片) -- 耗时操作
-    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-    // 通过二进制 data 创建 image
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    // 3. 回到主线程进行图片赋值和界面刷新
-    [self performSelectorOnMainThread:@selector(refreshOnMainThread:) withObject:image waitUntilDone:YES];
-    
-    [self performSelector:<#(nonnull SEL)#> withObject:<#(nullable id)#> afterDelay:<#(NSTimeInterval)#>]
-}
-
-- (void)refreshOnMainThread:(UIImage *)image {
-    NSLog(@"current thread -- %@", [NSThread currentThread]);
-    
-    // 赋值图片到imageview
-    self.imageView.image = image;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    VC2 *vc1 = [[VC2 alloc] init];
+    [self.navigationController pushViewController:vc1 animated:true];
 }
 
 @end

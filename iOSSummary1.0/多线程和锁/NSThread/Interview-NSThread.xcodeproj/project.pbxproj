@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A440E33C28643CB900842460 /* ZYYWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E33B28643CB900842460 /* ZYYWeakTarget.m */; };
+		A440E33F28643DA200842460 /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E33E28643DA200842460 /* VC1.m */; };
+		A440E3422864455A00842460 /* ZYYThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E3412864455A00842460 /* ZYYThread.m */; };
+		A440E34528644C9B00842460 /* ZYYPermanentThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E34428644C9B00842460 /* ZYYPermanentThread.m */; };
+		A440E34828644FFC00842460 /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E34728644FFC00842460 /* VC2.m */; };
 		A4480591281A3B6E005CB27A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4480590281A3B6E005CB27A /* AppDelegate.m */; };
 		A4480594281A3B6E005CB27A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4480593281A3B6E005CB27A /* SceneDelegate.m */; };
 		A4480597281A3B6E005CB27A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4480596281A3B6E005CB27A /* ViewController.m */; };
@@ -17,6 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A440E33A28643CB900842460 /* ZYYWeakTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYWeakTarget.h; sourceTree = "<group>"; };
+		A440E33B28643CB900842460 /* ZYYWeakTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYWeakTarget.m; sourceTree = "<group>"; };
+		A440E33D28643DA200842460 /* VC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
+		A440E33E28643DA200842460 /* VC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC1.m; sourceTree = "<group>"; };
+		A440E3402864455A00842460 /* ZYYThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYThread.h; sourceTree = "<group>"; };
+		A440E3412864455A00842460 /* ZYYThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYThread.m; sourceTree = "<group>"; };
+		A440E34328644C9B00842460 /* ZYYPermanentThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYPermanentThread.h; sourceTree = "<group>"; };
+		A440E34428644C9B00842460 /* ZYYPermanentThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYPermanentThread.m; sourceTree = "<group>"; };
+		A440E34628644FFC00842460 /* VC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2.h; sourceTree = "<group>"; };
+		A440E34728644FFC00842460 /* VC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2.m; sourceTree = "<group>"; };
 		A448058C281A3B6E005CB27A /* Interview-NSThread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interview-NSThread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A448058F281A3B6E005CB27A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4480590281A3B6E005CB27A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,11 +82,21 @@
 				A4480593281A3B6E005CB27A /* SceneDelegate.m */,
 				A4480595281A3B6E005CB27A /* ViewController.h */,
 				A4480596281A3B6E005CB27A /* ViewController.m */,
+				A440E33D28643DA200842460 /* VC1.h */,
+				A440E33E28643DA200842460 /* VC1.m */,
+				A440E34628644FFC00842460 /* VC2.h */,
+				A440E34728644FFC00842460 /* VC2.m */,
 				A4480598281A3B6E005CB27A /* Main.storyboard */,
 				A448059B281A3B70005CB27A /* Assets.xcassets */,
 				A448059D281A3B70005CB27A /* LaunchScreen.storyboard */,
 				A44805A0281A3B70005CB27A /* Info.plist */,
 				A44805A1281A3B70005CB27A /* main.m */,
+				A440E33A28643CB900842460 /* ZYYWeakTarget.h */,
+				A440E33B28643CB900842460 /* ZYYWeakTarget.m */,
+				A440E3402864455A00842460 /* ZYYThread.h */,
+				A440E3412864455A00842460 /* ZYYThread.m */,
+				A440E34328644C9B00842460 /* ZYYPermanentThread.h */,
+				A440E34428644C9B00842460 /* ZYYPermanentThread.m */,
 			);
 			path = "Interview-NSThread";
 			sourceTree = "<group>";
@@ -146,9 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A440E34828644FFC00842460 /* VC2.m in Sources */,
+				A440E33F28643DA200842460 /* VC1.m in Sources */,
+				A440E3422864455A00842460 /* ZYYThread.m in Sources */,
 				A4480597281A3B6E005CB27A /* ViewController.m in Sources */,
 				A4480591281A3B6E005CB27A /* AppDelegate.m in Sources */,
 				A44805A2281A3B70005CB27A /* main.m in Sources */,
+				A440E34528644C9B00842460 /* ZYYPermanentThread.m in Sources */,
+				A440E33C28643CB900842460 /* ZYYWeakTarget.m in Sources */,
 				A4480594281A3B6E005CB27A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
