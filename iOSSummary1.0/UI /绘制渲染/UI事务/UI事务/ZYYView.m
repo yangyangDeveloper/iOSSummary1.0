@@ -54,7 +54,6 @@
         
         [NSThread sleepForTimeInterval:2];
         NSLog(@"休眠结束");
-        
         weakSelf.layer.backgroundColor = [UIColor blueColor].CGColor;
         //[weakSelf getthead:layerQueue];
   
@@ -72,6 +71,7 @@
     UIImage *image = [UIImage imageNamed:@"me"];
     self.layer.backgroundColor = [UIColor redColor].CGColor;
     self.layer.contents = (__bridge  id)image.CGImage;
+    
 //    [CATransaction setCompletionBlock:^{
 //        NSLog(@"currentthread=%@", [NSThread currentThread]);
 //    }];

@@ -34,7 +34,6 @@
     //[layer setNeedsDisplay];
     NSLog(@"layer==%@",layer);
 }
-
  
 # pragma mark 绘制图形、图像到图层，注意参数中的ctx是图层的图形上下文，其中绘图位置也是相对图层而言的
 

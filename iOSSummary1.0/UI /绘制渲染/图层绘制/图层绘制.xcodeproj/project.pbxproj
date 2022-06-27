@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A440E386286468F500842460 /* ZYYView.m in Sources */ = {isa = PBXBuildFile; fileRef = A440E385286468F500842460 /* ZYYView.m */; };
 		A492878A2860715A00EC7628 /* ZYYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A49287892860715A00EC7628 /* ZYYLabel.m */; };
 		A4EC852628582E5E004014E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC852528582E5E004014E2 /* AppDelegate.m */; };
 		A4EC852928582E5E004014E2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC852828582E5E004014E2 /* SceneDelegate.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A440E384286468F500842460 /* ZYYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYView.h; sourceTree = "<group>"; };
+		A440E385286468F500842460 /* ZYYView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYView.m; sourceTree = "<group>"; };
 		A49287882860715A00EC7628 /* ZYYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYYLabel.h; sourceTree = "<group>"; };
 		A49287892860715A00EC7628 /* ZYYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYYLabel.m; sourceTree = "<group>"; };
 		A4EC852128582E5E004014E2 /* 图层绘制.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "图层绘制.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +78,8 @@
 				A4EC854128582ECA004014E2 /* KCView.m */,
 				A4EC85432858315D004014E2 /* VC3.h */,
 				A4EC85442858315D004014E2 /* VC3.m */,
+				A440E384286468F500842460 /* ZYYView.h */,
+				A440E385286468F500842460 /* ZYYView.m */,
 			);
 			path = "自定义图层";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				A4EC852C28582E5E004014E2 /* ViewController.m in Sources */,
 				A492878A2860715A00EC7628 /* ZYYLabel.m in Sources */,
 				A4EC85452858315D004014E2 /* VC3.m in Sources */,
+				A440E386286468F500842460 /* ZYYView.m in Sources */,
 				A4EC8568285834F5004014E2 /* VC1.m in Sources */,
 				A4EC852628582E5E004014E2 /* AppDelegate.m in Sources */,
 				A4EC854228582ECA004014E2 /* KCView.m in Sources */,

@@ -31,14 +31,16 @@
 // 优先级2
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
     NSLog(@"CGContextRef== %@",ctx);
+    
+    CGBitmapContextCreate(<#void * _Nullable data#>, <#size_t width#>, <#size_t height#>, <#size_t bitsPerComponent#>, <#size_t bytesPerRow#>, <#CGColorSpaceRef  _Nullable space#>, <#uint32_t bitmapInfo#>)
     //    子线程 {
     //        // 创建bitmap
     //        CGBitmapContextCreate(void * _Nullable data
     //       , <#size_t width#>, <#size_t height#>, <#size_t bitsPerComponent#>, <#size_t bytesPerRow#>, <#CGColorSpaceRef  _Nullable space#>, <#uint32_t bitmapInfo#>)
     //
-    //        CG绘制代码
+    //        CG绘制代码  绘制到上下文中
     //
-    //        弄一个image
+    //        弄一个image   // 从上下文中弄一个新的位图
     //        CGBitmapContextCreateImage(<#CGContextRef  _Nullable context#>)
     //
     //
@@ -52,6 +54,7 @@
 // 优先级3
 - (void)drawRect:(CGRect)rect {
     NSLog(@"%s",__func__);
+    cadis
 }
 
 @end
