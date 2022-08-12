@@ -10,10 +10,8 @@
 @implementation ZYYView
 
 /*
-
  CATransaction会捕获CALayer的变化，包括任何的渲染属性，把这些都提交到一个中间态
  然后在当前Runloop进入休眠或结束前，会发出Observer 消息。这是一种runloop消息类型，跟通知的方式类似，会通知观察者，这时Core Animation会把这些CALayer的变化提交给GPU绘制
- 
  
  CATransaction会对 begin和commit内部的变化进行捕获
  子线程需要加上 begin commit
@@ -27,7 +25,6 @@
 
 /*
  
- 
  [CATransaction begin];
  UIImage *image = [UIImage imageNamed:@"me"];
  weakSelf.layer.contents = (__bridge id)image.CGImage;
@@ -39,6 +36,25 @@
  */
 //
 
+
+
+
+//- (void)commit {
+//    layout_and_display_if_needed()
+//}
+//
+//- (void)layout_and_display_if_needed {
+//    layout_if_needed()
+//    display_if_needed()
+//}
+//
+//- (void)layoutSubviews {
+//    
+//}
+//
+//- (void)drawRect {
+//    
+//}
 
 
 // 子线程

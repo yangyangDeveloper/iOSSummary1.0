@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self test2];
+    [self test1];
 }
 
 
@@ -23,22 +23,22 @@ void observeRunloopActicities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     switch (activity) {
         case kCFRunLoopEntry:
-            NSLog(@"kCFRunLoopEntry");
+            NSLog(@"进入");
             break;
         case kCFRunLoopBeforeTimers:
-            NSLog(@"kCFRunLoopBeforeTimers");
+            NSLog(@"将要处理timer");
             break;
         case kCFRunLoopBeforeSources:
-            NSLog(@"kCFRunLoopBeforeSources");
+            NSLog(@"将要处理source");
             break;
         case kCFRunLoopBeforeWaiting:
-            NSLog(@"kCFRunLoopBeforeWaiting");
+            NSLog(@"即将休眠");
             break;
         case kCFRunLoopAfterWaiting:
-            NSLog(@"kCFRunLoopAfterWaiting");
+            NSLog(@"被唤醒");
             break;
         case kCFRunLoopExit:
-            NSLog(@"kCFRunLoopExit");
+            NSLog(@"推出");
             break;
         default:
             break;
@@ -106,7 +106,7 @@ void observeRunloopActicities(CFRunLoopObserverRef observer, CFRunLoopActivity a
  2022-02-03 16:58:45.183017+0800 Interview05-Observer[41583:3650284] -[ViewController touchesBegan:withEvent:]
  */
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%s",__func__);
+    //NSLog(@"%s",__func__);
 }
 
 @end

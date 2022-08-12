@@ -61,7 +61,8 @@ void observeRunloopActicities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self test];
+    self.view.backgroundColor = [UIColor redColor];
+    [self test];
     
     //[self.zyyview updateContents];
     
@@ -75,8 +76,13 @@ void observeRunloopActicities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 //    [self.zyyview updateContentsInsubThreads];
     NSLog(@"666");
     
-    VC1 *vc = [[VC1 alloc] init];
-    [self.navigationController pushViewController:vc animated:true];
+    //[CATransaction begin];
+    //self.view.layer.backgroundColor = [UIColor blueColor].CGColor;
+    //[CATransaction commit];
+    
+    
+//    VC1 *vc = [[VC1 alloc] init];
+//    [self.navigationController pushViewController:vc animated:true];
     
     //[ZYYObject threadForDispatch];
     
