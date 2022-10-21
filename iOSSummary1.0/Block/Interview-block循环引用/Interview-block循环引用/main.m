@@ -98,8 +98,8 @@ int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
 
-        test3();
-        NSLog(@"111111");
+        //test3();
+        //NSLog(@"111111");
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

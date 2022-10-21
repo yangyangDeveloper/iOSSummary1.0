@@ -15,6 +15,7 @@
 		A44805712819338C005CB27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A448056F2819338C005CB27A /* LaunchScreen.storyboard */; };
 		A44805742819338C005CB27A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44805732819338C005CB27A /* main.m */; };
 		A448057C281937EA005CB27A /* ZYYOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A448057B281937EA005CB27A /* ZYYOperation.m */; };
+		A48080642902A3B600C70631 /* ZYConcurrentOpreation.m in Sources */ = {isa = PBXBuildFile; fileRef = A48080632902A3B600C70631 /* ZYConcurrentOpreation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		A44805732819338C005CB27A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A448057A281937EA005CB27A /* ZYYOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYOperation.h; sourceTree = "<group>"; };
 		A448057B281937EA005CB27A /* ZYYOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYOperation.m; sourceTree = "<group>"; };
+		A48080622902A3B600C70631 /* ZYConcurrentOpreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYConcurrentOpreation.h; sourceTree = "<group>"; };
+		A48080632902A3B600C70631 /* ZYConcurrentOpreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYConcurrentOpreation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				A44805732819338C005CB27A /* main.m */,
 				A448057A281937EA005CB27A /* ZYYOperation.h */,
 				A448057B281937EA005CB27A /* ZYYOperation.m */,
+				A48080622902A3B600C70631 /* ZYConcurrentOpreation.h */,
+				A48080632902A3B600C70631 /* ZYConcurrentOpreation.m */,
 			);
 			path = NSOperation;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A448057C281937EA005CB27A /* ZYYOperation.m in Sources */,
+				A48080642902A3B600C70631 /* ZYConcurrentOpreation.m in Sources */,
 				A44805692819338A005CB27A /* ViewController.m in Sources */,
 				A44805632819338A005CB27A /* AppDelegate.m in Sources */,
 				A44805742819338C005CB27A /* main.m in Sources */,

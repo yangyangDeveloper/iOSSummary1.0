@@ -23,39 +23,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self test1];
-//    [self test2];
+    //[self test1];
+   //[self test2];
 //    [self test3];
-//    [self test4];
-//    [self test5];
-//    [self test6];
-//    [self test7];
-//    [self test8];
+   // [self test4];
+//   [self test5];
+   //[self test6];
+   // [self test7];
+   // [self test8];
     //[self test9];
     [self test10];
 }
 
+/*
+ 
+  主队列   任务2 test1 ---》
+  队列循环等待  主队列是串行队列  任务必须一个个执行  任务2必须依赖test1 执行完 才能执行。 而test1里面包含 任务2 任务2要求立即去执行 有返回值才会执行完。
+*/
 - (void)test1 {
     NSLog(@"任务1");
     // 当前串行队列是 dispatch_get_main_queue
     // 现在又使用sync往当前串行队列添加任务就会队列死锁
-    dispatch_sync(dispatch_get_main_queue(), ^{
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSLog(@"任务2");
+//    });
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"%@", [NSThread currentThread]);
         NSLog(@"任务2");
     });
     NSLog(@"任务3");
 }
 
-- (void)test2 {
-    dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
-    NSLog(@"任务1");
-    // 当前队列是 dispatch_get_main_queue
-    // 使用sync 但是添加的队列是 自己的queue  所以没有 队列死锁
-    dispatch_sync(queue, ^{
-        NSLog(@"任务2");
-    });
-    NSLog(@"任务3");
-}
-
+// 主队列任务 无论同步函数还是异步函数 都不会开启新线程 都是需要放到主线程执行的
 - (void)test3 {
    NSLog(@"任务1");
     // 当前队列是 dispatch_get_main_queue
@@ -65,6 +66,24 @@
     });
     NSLog(@"任务3");
 }
+
+
+/*
+ 1、当前上下文队列是主队列 test2在主队列
+ 2、任务2 在自定义的串行队列里面 不会死锁
+ */
+- (void)test2 {
+    dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
+    NSLog(@"任务1");
+   
+    // 使用sync 但是添加的队列是 自己的queue  所以没有 队列死锁
+    dispatch_sync(queue, ^{
+        NSLog(@"任务2");
+    });
+    NSLog(@"任务3");
+}
+
+
 
 - (void)test4 {
     dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);

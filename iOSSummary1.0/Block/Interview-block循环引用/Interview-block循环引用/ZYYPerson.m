@@ -12,4 +12,9 @@
 - (void)dealloc {
     NSLog(@"%s",__func__);
 }
+
+- (void)dosome {
+    NSLog(@"5555");
+}
+
 @end

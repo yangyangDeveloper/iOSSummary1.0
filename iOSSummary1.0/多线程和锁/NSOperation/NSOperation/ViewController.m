@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "ZYYOperation.h"
+#import "ZYConcurrentOpreation.h"
 
 @interface ViewController ()
 @property (nonatomic, assign) int ticketSurplusCount;
@@ -16,26 +17,39 @@
 @implementation ViewController
 
 /*
+ opreation
  
- NSInvocationOperation   NSBlockOperation  自定义Operation
+ NSInvocationOperation
+ NSBlockOperation
+ 自定义并发Operation
+ 自定义非并发Operation
  
- 都在在当前线程执行
+ 1、NSBlockOperation、NSInvocationOperation 都实在是当前线程执行 同步操作 卡当前线程
+ 2、NSBlockOperation 是管理并发操作的  （前提是 你添加的block个数要多，系统才会开启新线程）
+ 3、自定义线程  start  main 方法     需要重写  isfinished  isexcuting  这些状态
  
- NSBlockOperation 可以开启新线程 取决于操作的个数。如果添加的操作的个数多，就会自动开启新线程。当然开启的线程数是由系统来决定的。
- */
+*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    // [self inOp];
+    // [self blockOp];
+    //[self blockOpAddBlocks];
+    
+    //[self useCustomOperation];
+    [self asyncOpQueue];
     //[self operation];
-    // NSBlockOperation 自动开启新线程 + blockOperationWithBlock 在非当前线程执行
-    //[self useBlockOperationAddExecutionBlock];
-    [self setMaxConcurrentOperationCount];
+
+    //[self setMaxConcurrentOperationCount];
     //[self addDependency];
     //[self communication];
     //[self initTicketStatusSave];
 }
 
 - (void)operation {
+    
     
     /*
      主线程
@@ -52,11 +66,11 @@
      */
 }
 
+
 /**
  * 使用子类 NSInvocationOperation
  */
-- (void)useInvocationOperation {
-    
+- (void)inOp {
     // 1.创建 NSInvocationOperation 对象
     NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task1) object:nil];
 
@@ -71,45 +85,32 @@
     }
 }
 
-/**
- * 使用子类 NSBlockOperation
+/*
+   NSBlockOperation  单任务  就在当前线程执行 没有开启新线程
  */
-- (void)useBlockOperation {
+- (void)blockOp {
 
     // 1.创建 NSBlockOperation 对象
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
-        }
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"block = ---%@", [NSThread currentThread]);
+        sleep(3);
+        
     }];
-
-    // 2.调用 start 方法开始执行操作
-    [op start];
-}
-
-/**
- * 使用自定义继承自 NSOperation 的子类
- */
-- (void)useCustomOperation {
-    // 1.创建 YSCOperation 对象
-    ZYYOperation *op = [[ZYYOperation alloc] init];
-    // 2.调用 start 方法开始执行操作
-    [op start];
+    
+    //  NSOperation已经添加到NSOperationQueue后在调用这个方法或者先调用了这个方法然后再把NSOperation添加到NSOperationQueue都是错误的。  和queue不能同时存在。
+    [op2 start];
 }
 
 
-/**
- * 使用子类 NSBlockOperation
- * 调用方法 AddExecutionBlock:
- */
 /*
+ NSBlockOperation 封装多任务添加到 NSBlockOperation 会自动开启新线程 开启的线程数系统决定
+ blockop + 额外blocks
  因为addExecutionBlock 追加过多
  1、addExecutionBlock之间线程不一样
  2、addExecutionBlock 和 blockOperationWithBlock 线程也不一样
  3、blockOperationWithBlock没有在当前线程执行
  */
-- (void)useBlockOperationAddExecutionBlock {
+- (void)blockOpAddBlocks {
 
     // 1.创建 NSBlockOperation 对象
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
@@ -169,12 +170,109 @@
 
 /*
  
- 当最大并发操作数为1时，操作是按顺序串行执行的，并且一个操作完成之后，下一个操作才开始执行。
- 当最大操作并发数为2时，操作是并发执行的，可以同时执行两个操作。  开启了3个线程
- 当最大操作并发数为8时，操作是并发执行的，可以同时执行8个操作。   开启了4个线程
- 而开启线程数量是由系统决定的，不需要我们来管理  只关心操作 不关系线程
+ 1: 同步执行：只需要重写 main 函数（要线程执行的代码），系统执行完main 函数后会自动将该Operation从队列中移除；
+ 2、异步执行：重写 start 函数和要管理的状态，如结束状态（isFinished）；
  
+*/
+
+/*
+    同步调用 只需要重写main方法  不需要放到queue里吗
+    1、可能发生cancle  如果是是在start之前发生的cancle  交给start方法去判断
+    2、如果是start已经调用了main  在执行main时候 发现了cancle  需要自己做一下判断iscancleid标识位
+    3、最后完成任务 记得标记 isfinised 标志位
  */
+- (void)useCustomOperation {
+    // 1.创建 YSCOperation 对象
+    //NSLog(@"")
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    ZYYOperation *op = [[ZYYOperation alloc] init];
+    // 2.调用 start 方法开始执行操作
+    [op cancel];
+    [op start];
+    NSLog(@"66666");
+}
+
+/*
+ queue 异步  如果queue添加自定义的op  那么op需要重写 start 和 main方法
+ 最大操作数 默认-1
+ 设置1 就是串行队列
+ 设置2 就是并发队列
+*/
+- (void)asyncOpQueue {
+    // 使用queue 就代表异步执行  设置最大操作数来决定是 串行队列还是 并发队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    ZYConcurrentOpreation *op = [[ZYConcurrentOpreation alloc] init];
+    ZYConcurrentOpreation *op2 = [[ZYConcurrentOpreation alloc] init];
+
+    [queue addOperation:op];
+    [queue addOperation:op2];
+    
+    sleep(10);
+    NSLog(@"%@",queue.operations);
+//
+//    [op2 cancel];
+//    [op cancel];
+}
+
+
+// 设置依赖
+- (void)dependency {
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    ZYConcurrentOpreation *op1 = [[ZYConcurrentOpreation alloc] init];
+    
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"block = ---%@", [NSThread currentThread]);
+        sleep(3);
+        
+    }];
+    [op1 addDependency:op2];
+    
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+}
+
+
+// 设置依赖2
+- (void)addDependency {
+
+    // 1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+
+    // 2.创建操作
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+            NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
+        }
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+            NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
+        }
+    }];
+
+    // 3.添加依赖
+    [op2 addDependency:op1]; // 让op2 依赖于 op1，则先执行op1，在执行op2
+
+    // 4.添加操作到队列中
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+}
+
+
+/*
+ 最大操作数默认-1
+ 设置1 串行队列
+ 设置2 以上就是并发队列
+     如果设置2 就是最多执行2个op  当有一个op执行完毕以后，会执行其他的op
+     op执行完需要把自己表计为 finised  让出位置
+ 开启线程数量是由系统决定的，不需要我们来管理  只关心操作 不关系线程
+ */
+
 - (void)setMaxConcurrentOperationCount {
 
     // 1.创建队列
@@ -226,39 +324,6 @@
 
 
 /**
- * 操作依赖
- * 使用方法：addDependency:
- */
-// op1 先执行，op2 后执行
-- (void)addDependency {
-
-    // 1.创建队列
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-
-    // 2.创建操作
-    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
-    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-        for (int i = 0; i < 2; i++) {
-            [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-            NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
-        }
-    }];
-
-    // 3.添加依赖
-    [op2 addDependency:op1]; // 让op2 依赖于 op1，则先执行op1，在执行op2
-
-    // 4.添加操作到队列中
-    [queue addOperation:op1];
-    [queue addOperation:op2];
-}
-
-
-/**
  * 线程间通信
  */
 - (void)communication {
@@ -285,39 +350,28 @@
     }];
 }
 
-
-/**
- * 线程安全：使用 NSLock 加锁
- * 初始化火车票数量、卖票窗口(线程安全)、并开始卖票
- */
-
+// NSOpreation非线程的安全：使用 NSLock 加锁
 - (void)initTicketStatusSave {
     NSLog(@"currentThread---%@",[NSThread currentThread]); // 打印当前线程
 
     self.ticketSurplusCount = 50;
-
     self.lock = [[NSLock alloc] init];  // 初始化 NSLock 对象
 
     // 1.创建 queue1,queue1 代表北京火车票售卖窗口
-    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];   // 开启后台线程 相当于gcd的异步
-    queue1.maxConcurrentOperationCount = 1;  //  最大操作数为1 相当于串行队列
-
-    // 2.创建 queue2,queue2 代表上海火车票售卖窗口
-    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];
-    queue2.maxConcurrentOperationCount = 1;  // 最大操作数为1 相当于串行队列
-
-    // 3.创建卖票操作 op1
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
+    queue1.maxConcurrentOperationCount = 1;
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
         [self saleTicketSafe];
     }];
-
-    // 4.创建卖票操作 op2
+    [queue1 addOperation:op1];
+    
+    
+    // 2.创建 queue2,queue2 代表上海火车票售卖窗口
+    NSOperationQueue *queue2 = [[NSOperationQueue alloc] init];
+    queue2.maxConcurrentOperationCount = 1;  // 最大操作数为1 相当于串行队列
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
         [self saleTicketSafe];
     }];
-
-    // 5.添加操作，开始卖票
-    [queue1 addOperation:op1];
     [queue2 addOperation:op2];
 }
 

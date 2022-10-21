@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		A4476B2F28E6DCC80069044A /* NBBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A4476B2E28E6DCC80069044A /* NBBlock.m */; };
+		A4476B3228E6E14E0069044A /* VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4476B3128E6E14E0069044A /* VC2.m */; };
 		A4A6DF4C27B3C0860063B73A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6DF4B27B3C0860063B73A /* AppDelegate.m */; };
 		A4A6DF4F27B3C0860063B73A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6DF4E27B3C0860063B73A /* SceneDelegate.m */; };
 		A4A6DF5227B3C0860063B73A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6DF5127B3C0860063B73A /* ViewController.m */; };
@@ -32,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4476B2D28E6DCC80069044A /* NBBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NBBlock.h; sourceTree = "<group>"; };
+		A4476B2E28E6DCC80069044A /* NBBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBBlock.m; sourceTree = "<group>"; };
+		A4476B3028E6E14E0069044A /* VC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC2.h; sourceTree = "<group>"; };
+		A4476B3128E6E14E0069044A /* VC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC2.m; sourceTree = "<group>"; };
 		A4A6DF4727B3C0860063B73A /* Interview-block循环引用.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interview-block循环引用.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A6DF4A27B3C0860063B73A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4A6DF4B27B3C0860063B73A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 				A4A6DF5C27B3C0870063B73A /* main.m */,
 				A4A6DF6827B3C16C0063B73A /* ZYYPerson.h */,
 				A4A6DF6927B3C16C0063B73A /* ZYYPerson.m */,
+				A4476B2D28E6DCC80069044A /* NBBlock.h */,
+				A4476B2E28E6DCC80069044A /* NBBlock.m */,
+				A4476B3028E6E14E0069044A /* VC2.h */,
+				A4476B3128E6E14E0069044A /* VC2.m */,
 			);
 			path = "Interview-block循环引用";
 			sourceTree = "<group>";
@@ -190,7 +200,9 @@
 			files = (
 				A4A6DF5227B3C0860063B73A /* ViewController.m in Sources */,
 				A4A6DF4C27B3C0860063B73A /* AppDelegate.m in Sources */,
+				A4476B3228E6E14E0069044A /* VC2.m in Sources */,
 				A4A6DF6A27B3C16C0063B73A /* ZYYPerson.m in Sources */,
+				A4476B2F28E6DCC80069044A /* NBBlock.m in Sources */,
 				A4A6DF5D27B3C0870063B73A /* main.m in Sources */,
 				A4A6DF4F27B3C0860063B73A /* SceneDelegate.m in Sources */,
 			);

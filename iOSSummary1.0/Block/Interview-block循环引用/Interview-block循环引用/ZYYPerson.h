@@ -17,6 +17,7 @@ typedef void(^ZYYBlock)(void);
 
 @property (copy, nonatomic) ZYYBlock block;
 @property (copy, nonatomic) NSString *name;
+- (void)dosome;
 @end
 
 NS_ASSUME_NONNULL_END

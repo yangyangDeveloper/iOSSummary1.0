@@ -64,9 +64,30 @@
 //    [self test5];
 //    [self test6];
 //    [self test7];
-    [self test8];
+    //[self test8];
+    [self test9];
 }
 
+- (void)test9 {
+    dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    for (int i = 0; i < 100; i++) {
+        dispatch_async(queue, ^{
+            NSLog(@"%@", [NSThread currentThread]);
+            NSLog(@"%d", i);
+        });
+    }
+    
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"barrier%@", [NSThread currentThread]);
+        NSLog(@"任务barrier");
+    });
+//
+    dispatch_async(queue, ^{
+        NSLog(@"dispatch_async%@", [NSThread currentThread]);
+        NSLog(@"任务2");
+    });
+}
 
 // 主线程 执行 主队列的test3 执行到一半  去自定义的串行队列中 拿到任务2
 // dispatch_sync 决定拿到任务在主线程执行任务2 而且是立即执行
