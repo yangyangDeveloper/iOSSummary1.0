@@ -65,7 +65,9 @@
 //    [self test6];
 //    [self test7];
     //[self test8];
-    [self test9];
+    //[self test9];
+    //[self test10];
+    [self test11];
 }
 
 - (void)test9 {
@@ -232,5 +234,39 @@
     });
 }
 
+// 1 2 3 4 5
+- (void)test10 {
+    NSLog(@"1");
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    // 使用 sync 在当前线程执行  queue是并发  也是fifo 但是不用等头一个完全执行完
+    dispatch_sync(queue, ^{
+        
+        NSLog(@"2");   // 又是同步 在当前线程执行  并发队列  可以一个时间点 多个任务在执行
+        dispatch_sync(queue, ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
+
+//  1 2 4 3 5
+- (void)test11 {
+    NSLog(@"1");
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    // 使用 sync 在当前线程执行  queue是并发  也是fifo 但是不用等头一个完全执行完
+    dispatch_sync(queue, ^{
+        NSLog(@"current2=%@", [NSThread currentThread]);
+        NSLog(@"2");   // 异步 新开一个线程去执行3，
+        dispatch_async(queue, ^{
+            NSLog(@"3");
+            NSLog(@"current=3%@", [NSThread currentThread]);
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
 
 @end
